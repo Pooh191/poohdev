@@ -1,0 +1,362 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  /* Header Styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #023399;
+    color: white;
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    top: 0;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-menu {
+    display: flex;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .menu-list {
+    display: flex;
+  }
+  
+  .menu-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 12px 16px;
+    border-bottom: 2px solid transparent;
+    transition: .5s;
+  }
+
+  .menu-list a:hover{
+    border-bottom: 2px solid #fff;
+  }
+  
+  /* Menu Toggle (for mobile) */
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .nav-menu {
+        opacity: 0; /* เริ่มต้นซ่อน */
+        flex-direction: column;
+        position: absolute;
+        height: 100vh;
+        right: 0;
+        background-color: #ffc800;
+        width: 0%;
+        text-align: center;
+        top: 63.6px;  
+    }
+    
+    .menu-list {
+        display: unset;
+        gap: 20px;
+    }
+
+    .nav-menu.active {
+      display: flex;
+      width: 200px;
+      height: 100vh;
+      top: 0;
+      z-index: 0;
+      margin-top: 63.6px;  
+    }
+  
+    .menu-list {
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px 0;
+    }
+
+    .menu-list li{
+        padding: 20px 0;
+    }
+
+    .menu-list li:hover{
+        background-color: #ff9d00;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+    .follow-btn{
+        display: none;
+    }
+    .banner{
+        padding: 20px;
+    }
+  }
+  
+  /* Responsive Styling */
+@media (max-width: 768px) {
+    .nav-menu.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .banner{
+        margin-top: 63.6px;
+    }
+  }
+
+ul{
+    list-style-type: none;
+}
+
+/* -------------------------------- */
+
+
+/* Language Menu Styling */
+.language-menu {
+    position: fixed;
+    top: 90px;
+    display: grid;
+    gap: 10px;
+    padding: 12px 16px;
+    background: #ffc400;
+    transform: translateX(-50px);
+    transition: .5s;
+  }
+  
+  .lang-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .lang-btn:hover {
+    transform: scale(1.1); /* ขยายปุ่มเมื่อ hover */
+  }
+  
+  .lang-btn img {
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  /* ซ่อนเมนูภาษาอื่น */
+    .EN {
+        display: none;
+    }
+    span.TH{
+        transform: translate(40px,30px) rotate(90deg);
+        font-weight: 500;
+        position: fixed;
+    }
+    span.EN{
+        transform: translate(22px,30px) rotate(90deg);
+        font-weight: 500;
+        position: fixed;
+    }
+    .language-menu:hover{
+        transform: translateX(0);
+    }
+    .language-menu:hover span.TH,
+    .language-menu:hover span.EN{
+        opacity: 0;
+    }
+/* ------------------------------- */
+
+.banner{
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 20px 80px 20px 80px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  /* Profile Image */
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  /* Info Section */
+  .info {
+    flex: 1;
+  }
+  
+  .info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+  }
+  
+  .info p {
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .links {
+    margin-top: 10px;
+  }
+  
+  .links a {
+    color: #023399;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .links span {
+    color: #555;
+  }
+  
+  /* Follow Button */
+  .follow-btn {
+    background-color: #000000;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .follow-btn:hover {
+    background-color: #1e1e1e;
+  }
+  
+  .Anuphan{
+    font-family: "Anuphan", serif;
+  }
+
+  /* -------------------------------- */
+  .section{
+    height: 100vh;
+    margin: 0 auto;
+    padding: 56.6px 20px 20px 20px;
+    background-color: white;
+    border-radius: 10px;
+  }
+@media (max-width: 768px) {
+    .section{
+        height: 100vh;
+        padding-top: 63.6px;
+    }
+}
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #023399;
+  }
+  
+  .news-header h2 {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .news-header a {
+    text-decoration: none;
+    color: #023399;
+    font-weight: bold;
+    transform: translateY(15px);
+
+  }
+  
+  /* News Cards Grid */
+  .news-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  /* Individual News Card */
+  .news-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .news-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .news-card img {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .news-content {
+    padding: 15px;
+  }
+  
+  .news-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .news-content p {
+    color: #555;
+    line-height: 1.5;
+  }
+
+a{
+    text-decoration: none;
+}
+
+.teams{
+    height: auto;
+    background: #ff0000;
+    padding: 20px;
+}
+
+teams{
+    display: grid;
+}
+
+.team-carousel {
+  display: flex;
+  animation: slide 60s linear infinite; /* เลื่อนอย่างต่อเนื่อง */
+  margin-top: 20px;
+  color: #fff;
+}
+
+.team-member {
+  min-width: 200px; /* ความกว้างของสมาชิกทีม */
+  margin-right: 20px; /* ระยะห่างระหว่างสมาชิก */
+  text-align: center;
+}
+
+.team-member img {
+  width: 300px; /* ความกว้างของภาพ */
+  height: 400px; /* ความสูงของภาพ */
+  display: none;
+}
+
+@keyframes slide {
+  0% { transform: translateX(30%); }
+  100% { transform: translateX(-100%); }
+}

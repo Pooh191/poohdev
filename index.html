@@ -84,7 +84,7 @@
 	      <div class="text-content">
 	          <h1 class="title">ตัวตนของผม</h1>
 	          <p class="description">
-	              <b>ผมชื่อเด็กชายธนากร แซ่จอง อายุ <span id="age">14 ปี</span> ปัจจุบันศึกษาอยู่ที่โรงเรียนสุรวิทยาคาร จังหวัดสุรินทร์ ผมมีความสนใจในด้านเทคโนโลยีมาตั้งแต่ชั้นประถมศึกษาปีที่ 4 ผมได้เริ่มการเขียนโค๊ดตั้งแต่ประถมศึกษาปีที่ 6 ตอนนั้นผมเขียนภาษา Arduno (ภาษา C) จากนั้นมัธมศึกษาปีที่ 1 ผมได้เขียน Python ได้ จากนั้นตอนปิดเทอมก่อนขึ้นมัธยมศึกษาปีที่ 2 ผมได้เขียนภาษา HTML แล้วผมได้นำความความรู้ มาสอนเพื่อนๆได้จนถึงทุกวันนี้</b>
+	              <b>ผมชื่อเด็กชายธนากร แซ่จอง อายุ <span id="age">กำลังคำนวณ...</span> ปัจจุบันศึกษาอยู่ที่โรงเรียนสุรวิทยาคาร จังหวัดสุรินทร์ ผมมีความสนใจในด้านเทคโนโลยีมาตั้งแต่ชั้นประถมศึกษาปีที่ 4 ผมได้เริ่มการเขียนโค๊ดตั้งแต่ประถมศึกษาปีที่ 6 ตอนนั้นผมเขียนภาษา Arduno (ภาษา C) จากนั้นมัธมศึกษาปีที่ 1 ผมได้เขียน Python ได้ จากนั้นตอนปิดเทอมก่อนขึ้นมัธยมศึกษาปีที่ 2 ผมได้เขียนภาษา HTML แล้วผมได้นำความความรู้ มาสอนเพื่อนๆได้จนถึงทุกวันนี้</b>
 	          </p>
 	      </div>
 	      <div class="image-content">
@@ -135,7 +135,7 @@
                                 <th  width="100px">ปีที่ได้รับ</th>
                             </tr>
                             <tr>
-                                <td>13</td>
+                                <td></td>
                                 <td>
                                     <a href="">
                                         <img src="" width="100px">
@@ -146,7 +146,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     
     <section>
         <footer>
@@ -171,21 +170,52 @@ document.getElementById("currentYear").textContent = new Date().getFullYear();
 	
     <script>
 
-        // Calculate age dynamically based on the birthdate
-        function calculateAge() {
-            const birthdate = new Date('2011-03-20'); // Set birthdate here
-            const today = new Date();
-            let age = today.getFullYear() - birthdate.getFullYear();
-            const monthDifference = today.getMonth() - birthdate.getMonth();
-            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthdate.getDate())) {
-                age--;
+function updateAge() {
+            const birthdate = new Date(2011, 2, 20, 0, 0, 0); // ใช้ (ปี, เดือน-1, วัน, ชั่วโมง, นาที, วินาที)
+
+            function calculateAge() {
+                const now = new Date();
+                let years = now.getFullYear() - birthdate.getFullYear();
+                let months = now.getMonth() - birthdate.getMonth();
+                let days = now.getDate() - birthdate.getDate();
+                let hours = now.getHours() - birthdate.getHours();
+                let minutes = now.getMinutes() - birthdate.getMinutes();
+                let seconds = now.getSeconds() - birthdate.getSeconds();
+
+                if (seconds < 0) {
+                    seconds += 60;
+                    minutes--;
+                }
+                if (minutes < 0) {
+                    minutes += 60;
+                    hours--;
+                }
+                if (hours < 0) {
+                    hours += 24;
+                    days--;
+                }
+                if (days < 0) {
+                    const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                    days += prevMonth.getDate();
+                    months--;
+                }
+                if (months < 0) {
+                    months += 12;
+                    years--;
+                }
+
+                // แสดงผลอายุใน HTML
+                document.getElementById('age').textContent = 
+                    `${years} ปี ${months} เดือน ${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที`;
+                
+                console.log(`อายุปัจจุบัน: ${years} ปี ${months} เดือน ${days} วัน ${hours} ชั่วโมง ${minutes} นาที ${seconds} วินาที`);
             }
-            document.getElementById('age').textContent = `${age} ปี`;
+
+            calculateAge(); // คำนวณครั้งแรก
+            setInterval(calculateAge, 1000); // อัปเดตทุกวินาที
         }
 
-        // Call the function to set the age when the page loads
-        window.onload = calculateAge;
-
+        window.onload = updateAge; // ให้เริ่มทำงานเมื่อหน้าเว็บโหลดเสร็จ
     </script>
 	<script>
         document.addEventListener('DOMContentLoaded', () => {

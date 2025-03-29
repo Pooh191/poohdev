@@ -146,9 +146,11 @@
                             </tr>
                         </tbody>
                     </table>
+
+                    
     <section>
         <footer>
-            <center><p><b>Copyright © 2024 <span id="currentYear"></span> By <a href="http://Naphatdev.pages.dev">Naphat Panyo (ณภัทร ปัญโญ)</a><br>
+            <center><p><b>Copyright © 2024 - <span id="currentYear"></span> By <a href="http://Naphatdev.pages.dev">Naphat Panyo (ณภัทร ปัญโญ)</a><br>
             Made By <a href="http://poohdev.onrender.com">Thanakorn Sae-jong</a>
             </b></p></center>
 
@@ -157,6 +159,15 @@
 
 
 <!--  ////////////////////////////////////////// SCRIPT //////////////////////////////////////////   -->
+
+<script>
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+        document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script>
+
 	
     <script>
 

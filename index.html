@@ -24,6 +24,29 @@
     <link rel="stylesheet" href="styles1.css">
     <link rel="stylesheet" href="css/wiki.css">
     <link rel="stylesheet" href="css/footer.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .green {
+            color: green;
+            font-weight: bold;
+        }
+        .red {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
 	
 </head>
 <body>
@@ -105,48 +128,120 @@
             <a href="https://swk13.site">SWK313</a>
         </p>
     </div>
-    
 
-                    <div class="mw-heading mw-heading2">
-                        <h2 id="เกียรติบัตร">เกียรติบัตร</h2>
-                    </div>
-                    <table class="wikitable" style="text-align: center;font-size:100%;width:-webkit-fill-available;">
-            <thead>
-                            <tr>
-                                <td colspan="4" bgcolor="#ccc">มัธยมศึกษาตอนต้น</td>
-                            </tr>
-                            <tr>
-                                <th>ลำดับ</th>
-                                <th colspan="2">เกียรติบัตร</th>
-                                <th width="100px">ปีที่ได้รับ</th>
-                            </tr>
+    <div id="content"></div> <!-- โหลด index2.html มาตรงนี้ -->
+
+
+
+    <div class="mw-heading mw-heading2">
+        <h2 id="ผลการเรียน">ผลการเรียน</h2>
+    </div>
+    <section id="ar2">
+        <div class="about-me-content">
+            <table id="academic-results-2">
+                <thead>
+                    <tr>
+                        <th>ระดับชั้น</th>
+                        <th>ภาคเรียน</th>
+                        <th style="width: 20%;">ผลการเรียน</th>
+                        <th style="width: 20%;">อัตราการเปลี่ยนแปลง</th>
+                        <th style="width: 25%;">รายละเอียด</th>
+                    </tr>
                 </thead>
-                        <tbody id="data-certificate">
-                        </tbody>
-                    </table>
-                    <table class="wikitable" style="display: none; text-align: center;font-size:100%;width:-webkit-fill-available;">
-                        <tbody>
-                            <tr>
-                                <td colspan="4" bgcolor="#ccc">มัธยมศึกษาตอนต้น</td>
-                            </tr>
-                            <tr>
-                                <th>ลำดับ</th>
-                                <th colspan="2">เกียรติบัตร</th>
-                                <th  width="100px">ปีที่ได้รับ</th>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <a href="">
-                                        <img src="" width="100px">
-                                    </a>
-                                </td>
-                                <td></td>
-                                <td>2567</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
+                <tbody>
+                    <tr>
+                        <td rowspan="2">มัธยมศึกษาปีที่ 1</td>
+                        <td>1</td>
+                        <td class="gpa">3.33</td>
+                        <td class="change">-</td>
+                        <td><a href="#">ผลการเรียน</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="gpa">3.64</td>
+                        <td class="change"></td>
+                        <td><a href="#">ผลการเรียน</a></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">มัธยมศึกษาปีที่ 2</td>
+                        <td>1</td>
+                        <td class="gpa">3.78</td>
+                        <td class="change"></td>
+                        <td><a href="#">ผลการเรียน</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="gpa">3.72</td>
+                        <td class="change"></td>
+                        <td><a href="#">ผลการเรียน</a></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">มัธยมศึกษาปีที่ 3</td>
+                        <td>1</td>
+                        <td class="gpa"></td>
+                        <td class="change"></td>
+                        <td><a href="#">ผลการเรียน</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="gpa"></td>
+                        <td class="change"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>GPAX</td>
+                        <td>5 ภาคเรียน </td>
+                        <td id="gpax">-</td>
+                        <td>-</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+       
+    <div class="mw-heading mw-heading2">
+        <h2 id="เกียรติบัตร">เกียรติบัตร</h2>
+    </div>
+    <table class="wikitable" style="text-align: center;font-size:100%;width:-webkit-fill-available;">
+<thead>
+            <tr>
+                <td colspan="4" bgcolor="#ccc">มัธยมศึกษาตอนต้น</td>
+            </tr>
+            <tr>
+                <th>ลำดับ</th>
+                <th colspan="2">เกียรติบัตร</th>
+                <th width="100px">ปีที่ได้รับ</th>
+            </tr>
+</thead>
+        <tbody id="data-certificate">
+        </tbody>
+    </table>
+    <table class="wikitable" style="display: none; text-align: center;font-size:100%;width:-webkit-fill-available;">
+        <tbody>
+            <tr>
+                <td colspan="4" bgcolor="#ccc">มัธยมศึกษาตอนต้น</td>
+            </tr>
+            <tr>
+                <th>ลำดับ</th>
+                <th colspan="2">เกียรติบัตร</th>
+                <th  width="100px">ปีที่ได้รับ</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <a href="">
+                        <img src="" width="100px">
+                    </a>
+                </td>
+                <td></td>
+                <td>2567</td>
+            </tr>
+        </tbody>
+    </table>
+
+
     <section>
         <footer>
             <center><p><b>Copyright © 2024 - <span id="currentYear"></span> By <a href="http://Naphatdev.pages.dev">Naphat Panyo (ณภัทร ปัญโญ)</a><br>
@@ -167,8 +262,50 @@ document.getElementById("currentYear").textContent = new Date().getFullYear();
     });
 </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let gpaElements = document.querySelectorAll(".gpa");
+        let changeElements = document.querySelectorAll(".change");
+
+        let totalGpa = 0;
+        let count = 0;
+
+        for (let i = 1; i < gpaElements.length; i++) {
+            let prevGpa = parseFloat(gpaElements[i - 1].textContent);
+            let currGpa = parseFloat(gpaElements[i].textContent);
+
+            if (!isNaN(prevGpa) && !isNaN(currGpa)) {
+                let change = (currGpa - prevGpa).toFixed(2);
+                changeElements[i].textContent = (change > 0 ? "+" : "") + change;
+                changeElements[i].classList.add(change > 0 ? "green" : "red");
+            } else {
+                changeElements[i].textContent = "-";
+            }
+
+            if (!isNaN(currGpa)) {
+                totalGpa += currGpa;
+                count++;
+            }
+        }
+
+        if (count > 0) {
+            document.getElementById("gpax").textContent = (totalGpa / count).toFixed(2);
+        }
+    });
+</script>
 	
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch("index2.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("content").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading content:", error));
+    });
+</script>
     <script>
+
 
 function updateAge() {
             const birthdate = new Date(2011, 2, 20, 0, 0, 0); // ใช้ (ปี, เดือน-1, วัน, ชั่วโมง, นาที, วินาที)

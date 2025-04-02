@@ -107,7 +107,7 @@
 	      <div class="text-content">
 	          <h1 class="title">ตัวตนของผม</h1>
 	          <p class="description">
-	              <b>ผมชื่อเด็กชายธนากร แซ่จอง อายุ <span id="age">กำลังคำนวณ...</span> ปัจจุบันศึกษาอยู่ที่โรงเรียนสุรวิทยาคาร จังหวัดสุรินทร์ ผมมีความสนใจในด้านเทคโนโลยีมาตั้งแต่ชั้นประถมศึกษาปีที่ 4 ผมได้เริ่มการเขียนโค๊ดตั้งแต่ประถมศึกษาปีที่ 6 ตอนนั้นผมเขียนภาษา Arduno (ภาษา C) จากนั้นมัธมศึกษาปีที่ 1 ผมได้เขียน Python ได้ จากนั้นตอนปิดเทอมก่อนขึ้นมัธยมศึกษาปีที่ 2 ผมได้เขียนภาษา HTML แล้วผมได้นำความความรู้ มาสอนเพื่อนๆได้จนถึงทุกวันนี้</b>
+	              <b>ผมชื่อเด็กชายธนากร แซ่จอง อายุ <span id="age"></span> ปัจจุบันศึกษาอยู่ที่โรงเรียนสุรวิทยาคาร จังหวัดสุรินทร์ ผมมีความสนใจในด้านเทคโนโลยีมาตั้งแต่ชั้นประถมศึกษาปีที่ 4 ผมได้เริ่มการเขียนโค๊ดตั้งแต่ประถมศึกษาปีที่ 6 ตอนนั้นผมเขียนภาษา Arduno (ภาษา C) จากนั้นมัธมศึกษาปีที่ 1 ผมได้เขียน Python ได้ จากนั้นตอนปิดเทอมก่อนขึ้นมัธยมศึกษาปีที่ 2 ผมได้เขียนภาษา HTML แล้วผมได้นำความความรู้ มาสอนเพื่อนๆได้จนถึงทุกวันนี้</b>
 	          </p>
 	      </div>
 	      <div class="image-content">
@@ -193,7 +193,7 @@
                         <td>5 ภาคเรียน </td>
                         <td id="gpax">-</td>
                         <td>-</td>
-                        <td></td>
+                        <td><a href="#">ผลการเรียน 5 เทอมแรก</a></td>
                     </tr>
                 </tbody>
             </table>
@@ -263,35 +263,37 @@ document.getElementById("currentYear").textContent = new Date().getFullYear();
 </script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        let gpaElements = document.querySelectorAll(".gpa");
-        let changeElements = document.querySelectorAll(".change");
+document.addEventListener("DOMContentLoaded", function() {
+    let gpaElements = document.querySelectorAll(".gpa");
+    let changeElements = document.querySelectorAll(".change");
 
-        let totalGpa = 0;
-        let count = 0;
+    let totalGpa = 0;
+    let count = 0;
+    let maxTerms = 5; // รวมแค่ 5 เทอมแรก
 
-        for (let i = 1; i < gpaElements.length; i++) {
-            let prevGpa = parseFloat(gpaElements[i - 1].textContent);
-            let currGpa = parseFloat(gpaElements[i].textContent);
+    for (let i = 1; i < gpaElements.length && i < maxTerms; i++) { // จำกัดที่ 5 เทอม
+        let prevGpa = parseFloat(gpaElements[i - 1].textContent);
+        let currGpa = parseFloat(gpaElements[i].textContent);
 
-            if (!isNaN(prevGpa) && !isNaN(currGpa)) {
-                let change = (currGpa - prevGpa).toFixed(2);
-                changeElements[i].textContent = (change > 0 ? "+" : "") + change;
-                changeElements[i].classList.add(change > 0 ? "green" : "red");
-            } else {
-                changeElements[i].textContent = "-";
-            }
-
-            if (!isNaN(currGpa)) {
-                totalGpa += currGpa;
-                count++;
-            }
+        if (!isNaN(prevGpa) && !isNaN(currGpa)) {
+            let change = (currGpa - prevGpa).toFixed(2);
+            changeElements[i].textContent = (change > 0 ? "+" : "") + change;
+            changeElements[i].classList.add(change > 0 ? "green" : "red");
+        } else {
+            changeElements[i].textContent = "-";
         }
 
-        if (count > 0) {
-            document.getElementById("gpax").textContent = (totalGpa / count).toFixed(2);
+        if (!isNaN(currGpa)) {
+            totalGpa += currGpa;
+            count++;
         }
-    });
+    }
+
+    if (count > 0) {
+        document.getElementById("gpax").textContent = (totalGpa / count).toFixed(2);
+    }
+});
+
 </script>
 	
 <script>

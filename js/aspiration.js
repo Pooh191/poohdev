@@ -16,15 +16,15 @@
                     status.textContent = item.status;
 
                     // Add appropriate class for status
-                    if (item.status === 'Completed') {
+                    if (item.status === 'Completed') {          // สำเร็จ
                         status.classList.add('completed');
-                    } else if (item.status === 'Pending') {
+                    } else if (item.status === 'Pending') {     // รอดำเนินการ
                         status.classList.add('pending');
-                    } else if (item.status === 'In Progress') {
+                    } else if (item.status === 'In Progress') {  // อยู่ระหว่างดำเนินการ
                         status.classList.add('in-progress');
-                    } else if (item.status === 'Following Up') {
+                    } else if (item.status === 'Following Up') {  // กำลังติดตาม
                         status.classList.add('following-up');
-                    } else if (item.status === 'Failed') {
+                    } else if (item.status === 'Failed') {      // ล้มเหลว
                         status.classList.add('failed');
                     }
 

@@ -1,21 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>เว็บไซต์ ปพ.ออนไลน์เข้าไม่ได้</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      color: #333;
+      padding: 20px;
+    }
+
+    .container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .error-image {
+      width: 150px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 25px;
+      color: #d32f2f; /* สีแดงประกาศข้อผิดพลาด */
+    }
+
+    a button {
+      background-color: #d32f2f;
+      border: none;
+      color: white;
+      padding: 12px 28px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    a button:hover {
+      background-color: #9a2424;
+    }
+    
+    ::selection {
+        background: #ffffff00;
+        color: #ffd700;
+    }
+  </style>
 </head>
 <body>
-    
-    <center>
-
-    <h1>ทางเว็บไซต์ ปพ.ออนไลน์เข้าเว็บของเทอมนี้ไม่ได้</h1>
+  <div class="container">
+    <!-- ใช้รูป error จาก free source หรือ URL ภายนอกก็ได้ -->
+    <img class="error-image" src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" alt="Error Icon" />
+    <h1>เว็บไซต์ ปพ.ออนไลน์ เข้าเว็บของเทอมนี้ไม่ได้</h1>
     <a href="index.html">
-        <button>กลับหน้าหลัก</button>
-      </a>
-      
-
-    </center>
-    
+      <button>กลับหน้าหลัก</button>
+    </a>
+  </div>
 </body>
 </html>
